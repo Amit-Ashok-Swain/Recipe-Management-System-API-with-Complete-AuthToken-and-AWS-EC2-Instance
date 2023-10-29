@@ -19,7 +19,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
+@Lazy
 public class UserService {
 
     private final UserRepository userRepo;
