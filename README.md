@@ -1,5 +1,5 @@
 
-# <h1 align="center"> Recipe Management System API with AWS </h1>
+# <h1 align="center"> Recipe Management System API with Complete AuthToken and AWS EC2 Instance </h1>
 ___ 
 <p align="center">
     <a href="Java url">
@@ -45,6 +45,16 @@ The Recipe Management System API with AWS is a Spring Boot-based system that emp
 - **Database:** MySQL (Hosted on AWS EC2)
 - **Continuous Integration:** GitHub Actions
 - **API Documentation:** SpringDoc OpenAPI (Swagger UI)
+
+### Key Annotations and Concepts
+
+#### Lazy Loading
+
+The application utilizes Hibernate's `@Lazy` loading feature to load data from the database only when it's needed. This helps optimize performance by avoiding unnecessary data retrieval. For example, when retrieving a user and their associated recipes, the recipes are loaded lazily to minimize the initial database query. The relevant data is fetched from the database when explicitly accessed.
+
+#### Authentication Token
+
+To ensure secure access and authorization, the system relies on an authentication token provided in the HTTP headers. Users are required to include a valid `Authorization` token when making requests to create, update, or delete recipes. The `authenticationToken` is validated to ensure that only authorized users can perform these actions.
 
 ## AWS EC2 for Database
 
